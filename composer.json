@@ -1,0 +1,50 @@
+{
+    "name": "ipfinder/ipfinder",
+    "description": "official PHP library for IPfinder",
+    "keywords": ["ipfinder", "IPV4", "IPV6", "ASN"],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/ipfinder/php",
+    "authors": [{
+        "name": "Mohamed Ben",
+        "email": "mohamed@ipfinder.io",
+        "homepage": "https://github.com/mohamedben",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^7.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ipfinder\\ipfinder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ipfinder\\ipfinder\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "scripts": {
+    	"Authentication": "php -f examples/Authentication_lookup.php",
+        "address": "php -f examples/address_lookup.php",
+        "asn": "php -f examples/asn_lookup.php",
+        "firewall": "php -f examples/firewall_lookup.php",
+        "ranges": "php -f examples/ranges_lookup.php",
+        "token": "php -f examples/token_info.php",
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-1.0": "1.0.x-dev"
+        }
+    }
+}
