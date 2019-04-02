@@ -6,9 +6,9 @@
     "license": "MIT",
     "homepage": "https://github.com/ipfinder/php",
     "authors": [{
-        "name": "Mohamed Ben",
+        "name": "Mohamed Ben rebia",
         "email": "mohamed@ipfinder.io",
-        "homepage": "https://github.com/mohamedben",
+        "homepage": "https://github.com/benemohamed",
         "role": "Developer"
     }],
     "require": {
