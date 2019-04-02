@@ -5,7 +5,7 @@ $data  = include 'data.php';
 use ipfinder\ipfinder\IPfinder;
 
 // Token
-$client = new IPfinder('ent'); // YOUR_TOKEN_GOES_HERE
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
 
 $asn = 'as1'; // as36947
 
