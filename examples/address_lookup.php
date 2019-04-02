@@ -5,7 +5,7 @@ $data  = include 'data.php';
 use ipfinder\ipfinder\IPfinder;
 
 // Token
-$client = new IPfinder('ent'); // YOUR_TOKEN_GOES_HERE
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
 
 $ip_address = $data['ip_address']; // 216.239.36.21
 
