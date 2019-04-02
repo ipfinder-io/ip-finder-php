@@ -38,6 +38,9 @@
         "token": "php -f examples/token_info.php",
         "test": "phpunit"
     },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "branch-alias": {
             "dev-1.0": "1.0.x-dev"
