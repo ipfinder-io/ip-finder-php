@@ -1,4 +1,5 @@
 ![Behat](https://ipfinder.io/assets/images/logos/logo.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp?ref=badge_shield)
 #  IPFinder PHP Client Library
 
 The official PHP client library for the [IPFinder.io](https://ipfinder.io) get details for :
@@ -141,3 +142,6 @@ License
 ----
 
 MIT
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp?ref=badge_large)
