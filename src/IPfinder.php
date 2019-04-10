@@ -9,7 +9,7 @@ use ipfinder\ipfinder\Validation\Tokenvalidation;
 use ipfinder\ipfinder\Validation\Firewallvalidation;
 
 
-const DEFAULT_BASE_URL  = "http://api.sample.com/v1/"; // or add proxy pass with your domain
+const DEFAULT_BASE_URL  = "https://api.ipfinder.io/v1/"; // or add proxy pass with your domain
 const DEFAULT_API_TOKEN = "free"; // The free token is limited to 4,000 requests a day for all 
 const FORMAT            = 'json';
 
