@@ -14,7 +14,7 @@ const DEFAULT_API_TOKEN = "free"; // The free token is limited to 4,000 requests
 const FORMAT            = 'json';
 
 /**
- * the IPinfo library to client code.
+ * the IPfinder library to client code.
  */
 class IPfinder
 {
