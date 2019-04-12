@@ -191,6 +191,7 @@ class IPfinder
      * @param string $path AS number, alpha-2 country only.
      * @param string $formats list formats supported
      * @return Firewall data.
+     * @throws IPfinderException
      */
     public function getFirewall(string $path, string $formats)
     {
