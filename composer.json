@@ -30,13 +30,22 @@
         "phpunit/phpunit": "^6.5"
     },
     "scripts": {
-        "Authentication": "php -f examples/Authentication_lookup.php",
+        "auth": "php -f examples/Authentication_lookup.php",
         "address": "php -f examples/address_lookup.php",
         "asn": "php -f examples/asn_lookup.php",
         "firewall": "php -f examples/firewall_lookup.php",
         "ranges": "php -f examples/ranges_lookup.php",
         "token": "php -f examples/token_info.php",
         "test": "phpunit"
+    },
+    "scripts-descriptions": {
+        "auth": "lookup your IP address information",
+        "address": "lookup IP address information",
+        "asn": "lookup Asn information",
+        "firewall": "lookup firewall information",
+        "ranges": "lookup Organization information",
+        "token": "Get service status",
+        "test": "Run all tests"
     },
     "config": {
         "sort-packages": true
