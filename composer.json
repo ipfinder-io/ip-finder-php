@@ -4,7 +4,7 @@
     "keywords": ["ipfinder", "IPV4", "IPV6", "ASN"],
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/ipfinder-io/php",
+    "homepage": "https://ipfinder.io/",
     "authors": [{
         "name": "Mohamed Ben rebia",
         "email": "mohamed@ipfinder.io",
