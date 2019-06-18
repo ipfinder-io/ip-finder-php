@@ -36,6 +36,8 @@
         "firewall": "php -f examples/firewall_lookup.php",
         "ranges": "php -f examples/ranges_lookup.php",
         "token": "php -f examples/token_info.php",
+        "getDomain": "php -f examples/getDomain.php",
+        "domainby": "php -f examples/domainby.php",
         "test": "phpunit"
     },
     "scripts-descriptions": {
@@ -45,6 +47,8 @@
         "firewall": "lookup firewall information",
         "ranges": "lookup Organization information",
         "token": "Get service status",
+        "domainby": "Get list Domain By ASN, Country,Ranges ",
+        "getDomain": "Get Domain IP ",
         "test": "Run all tests"
     },
     "config": {

@@ -6,7 +6,7 @@ use ipfinder\ipfinder\Exception\IPfinderException;
 /**
  *  class Ipvalidation
  */
-class Ipvalidation
+class Domainvalidation
 {
 
     /**
@@ -16,8 +16,8 @@ class Ipvalidation
      */
     public static function validate($argument)
     {
-        if (!filter_var($argument, FILTER_VALIDATE_IP)) {
-            throw new IPfinderException('Invalid IPaddress');
+        if (!filter_var($argument, FILTER_VALIDATE_DOMAIN)) {
+            throw new IPfinderException('Invalid Domain name');
         }
         return true;
     }
