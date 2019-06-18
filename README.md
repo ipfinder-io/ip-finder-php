@@ -128,6 +128,61 @@ echo $details->queriesLeft."\n";
 
 ```
 
+## Get Domain IP
+
+
+```php
+use ipfinder\ipfinder\IPfinder;
+
+// Token
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+
+// domain name
+$name = 'google.com';
+
+$details = $client->getDomain($name);
+
+var_dump($details);
+
+```
+
+## Get Domain IP history
+
+
+
+```php
+use ipfinder\ipfinder\IPfinder;
+
+// Token
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+
+// domain name
+$name = 'google.com';
+
+$details = $client->getDomainHistory($name);
+
+var_dump($details);
+
+```
+
+## Get list Domain By ASN, Country,Ranges
+
+
+```php
+use ipfinder\ipfinder\IPfinder;
+
+// Token
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+
+// list live domain by country DZ,US,TN,FR,MA
+$by = 'DZ';
+
+$details = $client->getDomainBy($by);
+
+var_dump($details);
+
+```
+
 ## Add proxy
 ```php
 $client = new ipfinder\ipfinder\IPfinder('YOUR_TOKEN_GOES_HERE', 'https://ipfinder.yourdomain.com');
