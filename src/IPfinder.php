@@ -86,7 +86,7 @@ class IPfinder
     {
 
         if (isset($token)) {
-       //   Tokenvalidation::validate($token);
+            Tokenvalidation::validate($token);
             $this->token = $token;
         }
 
