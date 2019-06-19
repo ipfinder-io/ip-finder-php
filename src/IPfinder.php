@@ -257,7 +257,7 @@ class IPfinder
         return $this->call('firewall/' . $path, $formats);
     }
     /**
-     * [getDomain description]
+     * Get Domain IP
      * @param  string $path The API supports passing in a single website name domain name
      * @return Domain to IP data.
      * @throws IPfinderException
@@ -268,18 +268,18 @@ class IPfinder
         return $this->call('domain/' .$path);
     }
     /**
-     * [getDomainHistory description]
+     * Get Domain IP history
      * @param  sting  $path The API supports passing in a single website name domain name
      * @return Domain History data.
      * @throws IPfinderException
      */
-    public function getDomainHistory(sting $path)
+    public function getDomainHistory(string $path)
     {
-        Domainvalidation::validate($path);
+       Domainvalidation::validate($path);
         return $this->call('domainhistory/' .$path);
     }
     /**
-     * [getDomainBy description]
+     * Get list Domain By ASN, Country,Ranges
      * @param  string $by The API supports passing in a single ASN,Country,Ranges
      * @return Get list Domain By ASN, Country,Ranges
      */
