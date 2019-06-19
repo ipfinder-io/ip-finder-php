@@ -16,7 +16,7 @@ class Tokenvalidation
      */
     public static function validate($argument)
     {
-        if (!filter_var($argument, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => "/^[0-9a-z]{35}$/")))) {
+        if (strlen($argument) <= 25) {
             throw new IPfinderException('Invalid Token');
         }
         return true;
