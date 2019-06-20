@@ -3,7 +3,7 @@
     "description": "official PHP library for IPfinder",
     "keywords": ["ipfinder", "IPV4", "IPV6", "ASN"],
     "type": "library",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "homepage": "https://ipfinder.io/",
     "authors": [{
         "name": "Mohamed Ben rebia",
@@ -27,7 +27,8 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.5"
+        "squizlabs/php_codesniffer": "^3.4.2",
+        "phpunit/phpunit": "^8.2.2"
     },
     "scripts": {
         "auth": "php -f examples/Authentication_lookup.php",
@@ -37,6 +38,7 @@
         "ranges": "php -f examples/ranges_lookup.php",
         "token": "php -f examples/token_info.php",
         "getDomain": "php -f examples/getDomain.php",
+        "DomainHistory": "php -f examples/DomainHistory.php",
         "domainby": "php -f examples/domainby.php",
         "test": "phpunit"
     },
@@ -47,8 +49,9 @@
         "firewall": "lookup firewall information",
         "ranges": "lookup Organization information",
         "token": "Get service status",
-        "domainby": "Get list Domain By ASN, Country,Ranges ",
         "getDomain": "Get Domain IP ",
+        "DomainHistory": "Get Domain IP history",
+        "domainby": "Get list Domain By ASN, Country,Ranges ",
         "test": "Run all tests"
     },
     "config": {
