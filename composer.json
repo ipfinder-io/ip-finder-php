@@ -40,7 +40,10 @@
         "getDomain": "php -f examples/getDomain.php",
         "DomainHistory": "php -f examples/DomainHistory.php",
         "domainby": "php -f examples/domainby.php",
-        "test": "phpunit"
+        "test": "phpunit",
+        "format" : "phpcbf -p --standard=PSR2 src/ tests/ examples/",
+        "check"  : "phpcs -p --standard=PSR2 src/ tests/ examples/"
+
     },
     "scripts-descriptions": {
         "auth": "lookup your IP address information",
