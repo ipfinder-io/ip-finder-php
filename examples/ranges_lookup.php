@@ -1,4 +1,4 @@
-<?php 
+<?php
 require  'vendor/autoload.php';
 
 use ipfinder\ipfinder\IPfinder;
@@ -14,5 +14,5 @@ $details = $client->getRanges($org);
 
 var_dump($client);
 
-// print Organization name url encode  
+// print Organization name url encode
 echo $client->urlencode;

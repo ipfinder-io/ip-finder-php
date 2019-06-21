@@ -1,24 +1,24 @@
 <?php namespace ipfinder\ipfinder;
-/**
+
+/*
+ * Copyright 2019 Mohamed Benrebia <mohamed@ipfinder.io>
  *
- * All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the License);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an AS IS BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  * @package   ipfinder
  * @author    Mohamed Benrebia <mohamed@ipfinder.io>
  * @copyright 2019 Mohamed Benrebia
- * @license   http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license   https://opensource.org/licenses/Apache-2.0 Apache License, Version 2.0
  * @link      https://ipfinder.io
  */
 
@@ -30,14 +30,13 @@ use ipfinder\ipfinder\Validation\Tokenvalidation;
 use ipfinder\ipfinder\Validation\Firewallvalidation;
 use ipfinder\ipfinder\Validation\Domainvalidation;
 
-
 /**
  * The IPfinder library main class.
  *
  * @package   ipfinder
  * @author    Mohamed Benrebia <mohamed@ipfinder.io>
  * @copyright 2019 Mohamed Benrebia
- * @license   http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license   https://opensource.org/licenses/Apache-2.0 Apache License, Version 2.0
  * @link      https://ipfinder.io
  * @version   1.0.1
  */
@@ -67,6 +66,37 @@ class IPfinder
      */
     const FORMAT            = 'json';
 
+    /**
+     * @var string
+     */
+    const STATUS_PATH      = 'info';
+
+    /**
+     * @var string
+     */
+    const RANGES_PATH      = 'ranges/';
+
+    /**
+     * @var string
+     */
+    const FIREWALL_PATH      = 'firewall/';
+
+    /**
+     *
+     * @var string
+     */
+    const DOMAIN_PATH      = 'domain/';
+
+    /**
+     * @var string
+     */
+    const DOMAIN_H_PATH      = 'domainhistory/';
+
+
+    /**
+     * @var string
+     */
+    const DOMAIN_BY_PATH      = 'domainby/';
 
 
     private static $defaultBaseUrl = self::DEFAULT_BASE_URL;
@@ -87,21 +117,17 @@ class IPfinder
 
         if (isset($token)) {
             Tokenvalidation::validate($token);
-            $this->token = $token;
+            $this->token = trim($token);
+        } else {
+            $this->token = self::$defaultToken;
         }
 
-         else {
-             $this->token = self::$defaultToken;
-         }
-           
-        
+
         if (isset($baseUrl)) {
             $this->baseUrl = $baseUrl;
-        }
-         else {
+        } else {
             $this->baseUrl = self::$defaultBaseUrl;
         }
-        
     }
 
     /**
@@ -114,11 +140,12 @@ class IPfinder
     public function call(string $path = null, string $format = null)
     {
 
-        if (isset($format)) 
+        if (isset($format)) {
             $this->format = $format;
-         else 
+        } else {
             $this->format = self::$defaulFormat;
-        
+        }
+
 
         $curl = curl_init("{$this->baseUrl}{$path}");
 
@@ -150,10 +177,11 @@ class IPfinder
         // to array
         $this->response = json_decode($this->raw_body, true);
 
+
         // get status
         $this->status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-        
+
         $curl_error = curl_error($curl);
 
         if ($this->status != 200) {
@@ -185,11 +213,12 @@ class IPfinder
                     break;
             }
         }
-        if (isset($format)) 
+        if (isset($format)) {
             return $this->raw_body;
-         else 
+        } else {
             return new Info($this->response);
-        
+        }
+
         curl_close($curl);
     }
     /**
@@ -211,7 +240,6 @@ class IPfinder
 
         Ipvalidation::validate($path);
         return $this->call($path);
-
     }
     /**
      * Get details for an AS number.
@@ -231,7 +259,7 @@ class IPfinder
      */
     public function getStatus()
     {
-        return $this->call('info');
+        return $this->call(self::STATUS_PATH);
     }
     /**
      * Get details for an Organization name.
@@ -242,7 +270,7 @@ class IPfinder
     {
         $this->urlencode = rawurlencode($path);
 
-        return $this->call('ranges/' .  $this->urlencode);
+        return $this->call(self::RANGES_PATH .  $this->urlencode);
     }
     /**
      * Get Firewall data
@@ -253,8 +281,8 @@ class IPfinder
      */
     public function getFirewall(string $path, string $formats)
     {
-        Firewallvalidation::validate($path,$formats);
-        return $this->call('firewall/' . $path, $formats);
+        Firewallvalidation::validate($path, $formats);
+        return $this->call(self::FIREWALL_PATH . $path, $formats);
     }
     /**
      * Get Domain IP
@@ -262,10 +290,10 @@ class IPfinder
      * @return Domain to IP data.
      * @throws IPfinderException
      */
-    public function getDomain(string $path) 
+    public function getDomain(string $path)
     {
         Domainvalidation::validate($path);
-        return $this->call('domain/' .$path);
+        return $this->call(self::DOMAIN_PATH .$path);
     }
     /**
      * Get Domain IP history
@@ -275,8 +303,8 @@ class IPfinder
      */
     public function getDomainHistory(string $path)
     {
-       Domainvalidation::validate($path);
-        return $this->call('domainhistory/' .$path);
+        Domainvalidation::validate($path);
+        return $this->call(self::DOMAIN_H_PATH .$path);
     }
     /**
      * Get list Domain By ASN, Country,Ranges
@@ -285,6 +313,6 @@ class IPfinder
      */
     public function getDomainBy(string $by)
     {
-        return $this->call('domainby/' .$by);
+        return $this->call(self::DOMAIN_BY_PATH .$by);
     }
 }

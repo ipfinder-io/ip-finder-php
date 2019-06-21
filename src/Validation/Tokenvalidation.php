@@ -13,11 +13,12 @@ class Tokenvalidation
      * Helper method for validating an IPFINDER TOKEN string
      *
      * @param mixed     $argument
+     * @return bool
      */
     public static function validate($argument)
     {
         if (strlen($argument) <= 25) {
-            throw new IPfinderException('Invalid Token');
+            throw new IPfinderException("\e[0;37;41mInvalid IPFINDER API Token\e[0m");
         }
         return true;
     }
