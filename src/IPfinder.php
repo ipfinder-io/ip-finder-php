@@ -116,8 +116,8 @@ class IPfinder
     {
 
         if (isset($token)) {
-            Tokenvalidation::validate($token);
-            $this->token = trim($token);
+           // Tokenvalidation::validate($token);
+            $this->token = $token;
         } else {
             $this->token = self::$defaultToken;
         }
