@@ -44,7 +44,7 @@ var_dump($details);
 $client = new ipfinder\ipfinder\IPfinder('YOUR_TOKEN_GOES_HERE');
 
 // GET Get details for 1.0.0.0
-$ip_address = '1.0.0.0'; 
+$ip_address = '1.0.0.0';
 
 // lookup IP address information
 
@@ -68,11 +68,11 @@ $details = $client->getAsn($asn);
 var_dump($details);
 
 
-// get and print continent name  
-echo $details->continent_name."\n"; 
+// get and print continent name
+echo $details->continent_name."\n";
 
 // get and print speed
-echo $details->speed['ping']."\n"; 
+echo $details->speed['ping']."\n";
 
 ```
 
@@ -94,7 +94,7 @@ var_dump($details);
 
 ## Get IP Address Ranges
 This API available as part of our  enterprise [https://ipfinder.io/pricing](https://ipfinder.io/pricing).
-> Make sure to convert Organization name  into URL encoding 
+> Make sure to convert Organization name  into URL encoding
 ```php
 $client = new ipfinder\ipfinder\IPfinder('YOUR_TOKEN_GOES_HERE');
 
@@ -106,7 +106,7 @@ $details = $client->getRanges($org);
 
 var_dump($client);
 
-// print Organization name url encode  
+// print Organization name url encode
 echo $client->urlencode;
 
 
@@ -124,7 +124,7 @@ $details = $client->getStatus();
 var_dump($details);
 
 // get and print Number of IP address queries left for the day
-echo $details->queriesLeft."\n"; 
+echo $details->queriesLeft."\n";
 
 ```
 
@@ -135,7 +135,7 @@ echo $details->queriesLeft."\n";
 use ipfinder\ipfinder\IPfinder;
 
 // Token
-$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
 
 // domain name
 $name = 'google.com';
@@ -154,7 +154,7 @@ var_dump($details);
 use ipfinder\ipfinder\IPfinder;
 
 // Token
-$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
 
 // domain name
 $name = 'google.com';
@@ -172,7 +172,7 @@ var_dump($details);
 use ipfinder\ipfinder\IPfinder;
 
 // Token
-$client = new IPfinder('YOUR_TOKEN_GOES_HERE'); 
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
 
 // list live domain by country DZ,US,TN,FR,MA
 $by = 'DZ';
@@ -186,6 +186,23 @@ var_dump($details);
 ## Add proxy
 ```php
 $client = new ipfinder\ipfinder\IPfinder('YOUR_TOKEN_GOES_HERE', 'https://ipfinder.yourdomain.com');
+
+```
+
+## Error handling
+
+```php
+$client = new IPfinder('YOUR_TOKEN_GOES_HERE');
+try {
+$by = 'DZ';
+
+$details = $client->getDomainBy($by);
+
+} catch (IPfinderException $e) {
+
+print $e->getMessage();
+
+}
 
 ```
 
