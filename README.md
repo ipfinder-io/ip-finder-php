@@ -216,5 +216,6 @@ Contact Us With Additional Questions About Our API, if you would like more infor
 License
 ----
 
-MIT
+[![GitHub license](https://img.shields.io/github/license/ipfinder-io/ip-finder-php.svg)](https://github.com/ipfinder-io/ip-finder-php)
+
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp.svg?type=large"/></a>
