@@ -8,9 +8,12 @@ The official PHP client library for the [IPFinder.io](https://ipfinder.io) get d
 -  Firewall by supported formats details (apache_allow,  nginx_deny, CIDR , and more ..)
 -  IP Address Ranges by the Organization name  details (list_asn, list_prefixes , and more ..)
 -  service status details (queriesPerDay, queriesLeft, key_type, key_info)
+- Get Domain IP (asn, organization,country_code ....)
+- Get Domain IP history (total_ip, list_ip,organization,asn ....)
+- Get list Domain By ASN, Country,Ranges (select_by , total_domain  , list_domain ....)
 
 ## Getting Started
-singing up for a free account at [https://ipfinder.io/auth/signup](https://ipfinder.io/auth/signup), for Free IPFinder API access token.
+singup for a free account at [https://ipfinder.io/auth/signup](https://ipfinder.io/auth/signup), for Free IPFinder API access token.
 
 The free plan is limited to 4,000 requests a day, and doesn't include some of the data fields
 To enable all the data fields and additional request volumes see [https://ipfinder.io/pricing](https://ipfinder.io/pricing).
