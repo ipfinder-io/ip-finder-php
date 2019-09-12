@@ -1,6 +1,7 @@
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fipfinder-io%2Fphp?ref=badge_shield)
 # <a href='https://ipfinder.io/'><img src='https://camo.githubusercontent.com/46886c3e689a0d4a3f6c0733d1cab5d9f9a3926d/68747470733a2f2f697066696e6465722e696f2f6173736574732f696d616765732f6c6f676f732f6c6f676f2e706e67' height='60' alt='IP Finder'></a>
 #  IPFinder PHP Client Library
+[![PHP version](https://badge.fury.io/ph/ipfinder%2Fipfinder.svg)](https://badge.fury.io/ph/ipfinder%2Fipfinder)
 
 The official PHP client library for the [IPFinder.io](https://ipfinder.io) get details for :
 -  IP address details (city, region, country, postal code, latitude and more ..)
